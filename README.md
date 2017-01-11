@@ -1,6 +1,8 @@
-# OctoPrint-Bltouch
+# OctoPrint-BLTouch
 
-**TODO:** Describe what your plugin does.
+A simple plugin to add buttons on the control tab to manage BLTouch.
+
+![screenshot](screenshot.png)
 
 ## Setup
 
@@ -8,10 +10,3 @@ Install via the bundled [Plugin Manager](https://github.com/foosel/OctoPrint/wik
 or manually using this URL:
 
     https://github.com/jneilliii/OctoPrint-Bltouch/archive/master.zip
-
-**TODO:** Describe how to install your plugin, if more needs to be done than just installing it via pip or through
-the plugin manager.
-
-## Configuration
-
-**TODO:** Describe your plugin's configuration options (if any).

@@ -2,42 +2,29 @@
 layout: plugin
 
 id: BLTouch
-title: OctoPrint-Bltouch
-description: TODO
+title: OctoPrint-BLTouch
+description: Simple plugin to add BLTouch controls to the Control tab.
 author: jneilliii
 license: AGPLv3
 
-# TODO
-date: today's date in format YYYY-MM-DD, e.g. 2015-04-21
+date: 2017-01-10
 
-homepage: https://github.com/jneilliii/OctoPrint-Bltouch
-source: https://github.com/jneilliii/OctoPrint-Bltouch
-archive: https://github.com/jneilliii/OctoPrint-Bltouch/archive/master.zip
+homepage: https://github.com/jneilliii/OctoPrint-BLTouch
+source: https://github.com/jneilliii/OctoPrint-BLTouch
+archive: https://github.com/jneilliii/OctoPrint-BLTouch/archive/master.zip
 
-# TODO set this to true if your plugin uses the dependency_links setup parameter to include
-# library versions not yet published on PyPi. SHOULD ONLY BE USED IF THERE IS NO OTHER OPTION!
 follow_dependency_links: false
 
 # TODO
 tags:
-- a list
-- of tags
-- that apply
-- to your plugin
-- (take a look at the existing plugins for what makes sense here)
+- BLTouch
 
-# TODO
 screenshots:
-- url: url of a screenshot
-  alt: alt-text of a screenshot
-  caption: caption of a screenshot
-- url: url of another screenshot
-  alt: alt-text of another screenshot
-  caption: caption of another screenshot
-- ...
+- url: /assets/img/plugins/BLTouch/screenshot.png
+  alt: BLTouch
+  caption: BLTouch Controls
 
-# TODO
-featuredimage: url of a featured image for your plugin
+featuredimage: /assets/img/plugins/BLTouch/screenshot.png
 
 compatibility:
   # list of compatible versions, for example 1.2.0. If left empty no specific version requirement will be assumed
@@ -51,5 +38,6 @@ compatibility:
   - macos
 ---
 
-**TODO**: Longer description of your plugin, configuration examples etc. This part will be visible on the page at
+Simple plugin to add BLTouch controls to the Control tab.
+
 http://plugins.octoprint.org/plugin/BLTouch/
