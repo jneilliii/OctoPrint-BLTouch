@@ -13,7 +13,7 @@ $(function() {
 		
 		self.getAdditionalControls = function() {
             return [
-                { name: "BLTouch", type: "section", children: [
+                { name: "BLTouch", type: "section", layout: "horizontal", children: [
                     {type: "command", command: "M280 P0 S90", name: "Probe Up"},
                     {type: "command", command: "M280 P0 S10", name: "Probe Down"},
                     {type: "command", command: "M280 P0 S120", name: "Self Test", confirm: "Are you sure you want to run a self test?"},
