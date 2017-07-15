@@ -2,27 +2,27 @@
 Enter the GCODE commands necessary for the BLTouch to work with your firmware.  Default settings are for Marlin.
 <form class="form-horizontal" id="settings_plugin_BLTouch_form">
 	<div class="control-group">
-		<label class="control-label">{{ _('Pin Up Command') }}</label>
+		<label class="control-label">{{ _('Pin Up') }}</label>
         <div class="controls">
-            <input type="text" class="input-block-level" data-bind="value: settings.plugins.BLTouch.cmdProbeUp" size="15">
+            <input type="text" class="input-block-level" data-bind="value: settings.plugins.BLTouch.cmdProbeUp">
         </div>
     </div>
 	<div class="control-group">
-		<label class="control-label">{{ _('Pin Down Command') }}</label>
+		<label class="control-label">{{ _('Pin Down') }}</label>
         <div class="controls">
-            <input type="text" class="input-block-level" data-bind="value: settings.plugins.BLTouch.cmdProbeDown" size="15">
+            <input type="text" class="input-block-level" data-bind="value: settings.plugins.BLTouch.cmdProbeDown">
         </div>
     </div>
 	<div class="control-group">
-		<label class="control-label">{{ _('Self Test Command') }}</label>
+		<label class="control-label">{{ _('Self Test') }}</label>
         <div class="controls">
-            <input type="text" class="input-block-level" data-bind="value: settings.plugins.BLTouch.cmdSelfTest" size="15">
+            <input type="text" class="input-block-level" data-bind="value: settings.plugins.BLTouch.cmdSelfTest">
         </div>
     </div>
 	<div class="control-group">
-		<label class="control-label">{{ _('Release Alarm Command') }}</label>
+		<label class="control-label">{{ _('Release Alarm') }}</label>
         <div class="controls">
-            <input type="text" class="input-block-level" data-bind="value: settings.plugins.BLTouch.cmdReleaseAlarm" size="15">
+            <input type="text" class="input-block-level" data-bind="value: settings.plugins.BLTouch.cmdReleaseAlarm">
         </div>
     </div>
 </form>
