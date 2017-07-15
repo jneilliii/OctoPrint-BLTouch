@@ -48,7 +48,7 @@ $(function() {
         BLTouchViewModel,
 
         // e.g. loginStateViewModel, settingsViewModel, ...
-        ["controlViewModel,settingsViewModel"],
+        ["controlViewModel","settingsViewModel"],
 
         // e.g. #settings_plugin_BLTouch, #tab_plugin_BLTouch, ...
         ["settings_plugin_BLTouch_form"]
