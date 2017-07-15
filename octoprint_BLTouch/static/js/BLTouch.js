@@ -20,10 +20,10 @@ $(function() {
 		self.getAdditionalControls = function() {
             return [
                 { name: "BLTouch", type: "section", layout: "horizontal", children: [
-                    {type: "command", command: self.cmdProbeUp, name: "Probe Up"},
-                    {type: "command", command: self.cmdProbeDown, name: "Probe Down"},
-                    {type: "command", command: self.cmdSelfTest, name: "Self Test", confirm: "Are you sure you want to run a self test?"},
-                    {type: "command", command: self.cmdReleaseAlarm, name: "Release Alarm", confirm: "Are you sure you want to release the alarm?"},
+                    {type: "command", command: self.settingsViewModel.settings.plugins.BLTouch.cmdProbeUp(), name: "Probe Up"},
+                    {type: "command", command: self.settingsViewModel.settings.plugins.BLTouch.cmdProbeDown(), name: "Probe Down"},
+                    {type: "command", command: self.settingsViewModel.settings.plugins.BLTouch.cmdSelfTest(), name: "Self Test", confirm: "Are you sure you want to run a self test?"},
+                    {type: "command", command: self.settingsViewModel.settings.plugins.BLTouch.cmdReleaseAlarm(), name: "Release Alarm", confirm: "Are you sure you want to release the alarm?"},
                 ]}
             ];
         };
