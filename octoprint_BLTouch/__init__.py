@@ -11,12 +11,20 @@ from __future__ import absolute_import
 
 import octoprint.plugin
 
-class BltouchPlugin(octoprint.plugin.AssetPlugin):
+class BltouchPlugin(octoprint.plugin.AssetPlugin, octoprint.plugin.TemplatePlugin, octoprint.plugin.SettingsPlugin):
 	##-- AssetPlugin 
 	def get_assets(self):
 			return dict(
 				js=["js/BLTouch.js"]
 			)
+			
+	##-- Settings hooks
+	def get_settings_defaults(self):
+		return dict(cmdProbeUp="M280 P0 S90",cmdProbeDown="M280 P0 S10",cmdSelfTest="M280 P0 S120",cmdReleaseAlarm="M280 P0 S160")	
+	
+	##-- Template hooks
+	def get_template_configs(self):
+		return [dict(type="settings",custom_bindings=True)]
 
 	##~~ Softwareupdate hook
 
