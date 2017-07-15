@@ -16,7 +16,7 @@ class BLTouchPlugin(octoprint.plugin.AssetPlugin, octoprint.plugin.TemplatePlugi
 	
 	##-- Template hooks
 	def get_template_configs(self):
-		return [dict(type="settings",custom_bindings=True),dict(type="controls",custom_bindings=False)]
+		return [dict(type="settings",custom_bindings=False),dict(type="controls",custom_bindings=False)]
 
 	##~~ Softwareupdate hook
 	def get_update_information(self):
