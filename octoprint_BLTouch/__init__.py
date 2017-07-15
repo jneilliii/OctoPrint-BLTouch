@@ -11,7 +11,7 @@ from __future__ import absolute_import
 
 import octoprint.plugin
 
-class BltouchPlugin(octoprint.plugin.AssetPlugin, octoprint.plugin.TemplatePlugin, octoprint.plugin.SettingsPlugin):
+class BLTouchPlugin(octoprint.plugin.AssetPlugin, octoprint.plugin.TemplatePlugin, octoprint.plugin.SettingsPlugin):
 	##-- AssetPlugin 
 	def get_assets(self):
 			return dict(
@@ -27,20 +27,19 @@ class BltouchPlugin(octoprint.plugin.AssetPlugin, octoprint.plugin.TemplatePlugi
 		return [dict(type="settings",custom_bindings=True)]
 
 	##~~ Softwareupdate hook
-
 	def get_update_information(self):
 		# Define the configuration for your plugin to use with the Software Update
 		# Plugin here. See https://github.com/foosel/OctoPrint/wiki/Plugin:-Software-Update
 		# for details.
 		return dict(
 			BLTouch=dict(
-				displayName="Bltouch Plugin",
+				displayName="BLTouch Plugin",
 				displayVersion=self._plugin_version,
 
 				# version check: github repository
 				type="github_release",
 				user="jneilliii",
-				repo="OctoPrint-Bltouch",
+				repo="OctoPrint-BLTouch",
 				current=self._plugin_version,
 
 				# update method: pip
@@ -56,7 +55,7 @@ __plugin_name__ = "Bltouch Plugin"
 
 def __plugin_load__():
 	global __plugin_implementation__
-	__plugin_implementation__ = BltouchPlugin()
+	__plugin_implementation__ = BLTouchPlugin()
 
 	global __plugin_hooks__
 	__plugin_hooks__ = {
