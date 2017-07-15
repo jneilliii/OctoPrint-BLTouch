@@ -11,7 +11,7 @@ from __future__ import absolute_import
 
 import octoprint.plugin
 
-class BltouchPlugin(octoprint.plugin.AssetPlugin, octoprint.plugin.TemplatePlugin, octoprint.plugin.SettingsPlugin):
+class BLTouchPlugin(octoprint.plugin.AssetPlugin, octoprint.plugin.TemplatePlugin, octoprint.plugin.SettingsPlugin):
 	##-- AssetPlugin 
 	def get_assets(self):
 			return dict(
@@ -27,7 +27,6 @@ class BltouchPlugin(octoprint.plugin.AssetPlugin, octoprint.plugin.TemplatePlugi
 		return [dict(type="settings",custom_bindings=True)]
 
 	##~~ Softwareupdate hook
-
 	def get_update_information(self):
 		# Define the configuration for your plugin to use with the Software Update
 		# Plugin here. See https://github.com/foosel/OctoPrint/wiki/Plugin:-Software-Update
