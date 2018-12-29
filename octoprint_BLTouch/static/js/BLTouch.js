@@ -16,30 +16,38 @@ $(function() {
 		self.cmdProbeDown = ko.observable();
 		self.cmdSelfTest = ko.observable();
 		self.cmdReleaseAlarm = ko.observable();
+		self.cmdProbeBed = ko.observable();
+		self.cmdSaveSettings = ko.observable();
 		
 		self.getAdditionalControls = function() {
-            return [
-                { name: "BLTouch", type: "section", layout: "horizontal", children: [
-                    {type: "command", command: self.settingsViewModel.settings.plugins.BLTouch.cmdProbeUp(), name: "Probe Up"},
-                    {type: "command", command: self.settingsViewModel.settings.plugins.BLTouch.cmdProbeDown(), name: "Probe Down"},
-                    {type: "command", command: self.settingsViewModel.settings.plugins.BLTouch.cmdSelfTest(), name: "Self Test", confirm: "Are you sure you want to run a self test?"},
-                    {type: "command", command: self.settingsViewModel.settings.plugins.BLTouch.cmdReleaseAlarm(), name: "Release Alarm", confirm: "Are you sure you want to release the alarm?"},
-                ]}
-            ];
-        };
+			return [
+				{ name: "BLTouch", type: "section", layout: "horizontal", children: [
+					{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.BLTouch.cmdProbeUp());", name: "Probe Up"},
+					{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.BLTouch.cmdProbeDown());", name: "Probe Down"},
+					{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.BLTouch.cmdSelfTest());", name: "Self Test", confirm: "You are about to run a self test.",},
+					{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.BLTouch.cmdReleaseAlarm());", name: "Release Alarm", confirm: "You are about to release the alarm."},
+					{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.BLTouch.cmdProbeBed());", name: "Probe Bed", confirm: "You are about to probe the bed.",},
+					{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.BLTouch.cmdSaveSettings());", name: "Save", confirm: "You are about to save settings."}
+				]}
+			];
+		};
 		
 		self.onBeforeBinding = function() {
-            self.cmdProbeUp(self.settingsViewModel.settings.plugins.BLTouch.cmdProbeUp());
-            self.cmdProbeDown(self.settingsViewModel.settings.plugins.BLTouch.cmdProbeDown());
-            self.cmdSelfTest(self.settingsViewModel.settings.plugins.BLTouch.cmdSelfTest());
-            self.cmdReleaseAlarm(self.settingsViewModel.settings.plugins.BLTouch.cmdReleaseAlarm());
-        };
+			self.cmdProbeUp(self.settingsViewModel.settings.plugins.BLTouch.cmdProbeUp());
+			self.cmdProbeDown(self.settingsViewModel.settings.plugins.BLTouch.cmdProbeDown());
+			self.cmdSelfTest(self.settingsViewModel.settings.plugins.BLTouch.cmdSelfTest());
+			self.cmdReleaseAlarm(self.settingsViewModel.settings.plugins.BLTouch.cmdReleaseAlarm());
+			self.cmdProbeBed(self.settingsViewModel.settings.plugins.BLTouch.cmdProbeBed());
+			self.cmdSaveSettings(self.settingsViewModel.settings.plugins.BLTouch.cmdSaveSettings());
+		};
 		
 		self.onEventSettingsUpdated = function (payload) {            
             self.cmdProbeUp = self.settingsViewModel.settings.plugins.BLTouch.cmdProbeUp();
             self.cmdProbeDown = self.settingsViewModel.settings.plugins.BLTouch.cmdProbeDown();
             self.cmdSelfTest = self.settingsViewModel.settings.plugins.BLTouch.cmdSelfTest();
             self.cmdReleaseAlarm = self.settingsViewModel.settings.plugins.BLTouch.cmdReleaseAlarm();
+			self.cmdProbeBed(self.settingsViewModel.settings.plugins.BLTouch.cmdProbeBed());
+			self.cmdSaveSettings(self.settingsViewModel.settings.plugins.BLTouch.cmdSaveSettings());
         };
     };
 

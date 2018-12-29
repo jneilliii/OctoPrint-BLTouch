@@ -12,7 +12,7 @@ class BLTouchPlugin(octoprint.plugin.AssetPlugin, octoprint.plugin.TemplatePlugi
 			
 	##-- Settings hooks
 	def get_settings_defaults(self):
-		return dict(cmdProbeUp="M280 P0 S90",cmdProbeDown="M280 P0 S10",cmdSelfTest="M280 P0 S120",cmdReleaseAlarm="M280 P0 S160")	
+		return dict(cmdProbeUp="M280 P0 S90",cmdProbeDown="M280 P0 S10",cmdSelfTest="M280 P0 S120",cmdReleaseAlarm="M280 P0 S160",cmdProbeBed="G29",cmdSaveSettings="M500")
 	
 	##-- Template hooks
 	def get_template_configs(self):
@@ -20,9 +20,6 @@ class BLTouchPlugin(octoprint.plugin.AssetPlugin, octoprint.plugin.TemplatePlugi
 
 	##~~ Softwareupdate hook
 	def get_update_information(self):
-		# Define the configuration for your plugin to use with the Software Update
-		# Plugin here. See https://github.com/foosel/OctoPrint/wiki/Plugin:-Software-Update
-		# for details.
 		return dict(
 			BLTouch=dict(
 				displayName="BLTouch Plugin",
@@ -39,10 +36,6 @@ class BLTouchPlugin(octoprint.plugin.AssetPlugin, octoprint.plugin.TemplatePlugi
 			)
 		)
 
-
-# If you want your plugin to be registered within OctoPrint under a different name than what you defined in setup.py
-# ("OctoPrint-PluginSkeleton"), you may define that here. Same goes for the other metadata derived from setup.py that
-# can be overwritten via __plugin_xyz__ control properties. See the documentation for that.
 __plugin_name__ = "BLTouch Plugin"
 
 def __plugin_load__():
