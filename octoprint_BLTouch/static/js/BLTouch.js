@@ -26,7 +26,7 @@ $(function() {
 					{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.BLTouch.cmdProbeDown());", name: "Probe Down"},
 					{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.BLTouch.cmdSelfTest());", name: "Self Test", confirm: "You are about to run a self test.",},
 					{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.BLTouch.cmdReleaseAlarm());", name: "Release Alarm", confirm: "You are about to release the alarm."},
-					{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.BLTouch.cmdProbeBed());", name: "Probe Bed", confirm: "You are about to probe the bed.",},
+					{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.BLTouch.cmdProbeBed().split('\\n'));", name: "Probe Bed", confirm: "You are about to probe the bed.",},
 					{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.BLTouch.cmdSaveSettings());", name: "Save", confirm: "You are about to save settings."}
 				]}
 			];
