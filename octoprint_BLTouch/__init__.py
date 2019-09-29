@@ -12,7 +12,7 @@ class BLTouchPlugin(octoprint.plugin.AssetPlugin, octoprint.plugin.TemplatePlugi
 			
 	##-- Settings hooks
 	def get_settings_defaults(self):
-		return dict(cmdProbeUp="M280 P0 S90",cmdProbeDown="M280 P0 S10",cmdSelfTest="M280 P0 S120",cmdReleaseAlarm="M280 P0 S160",cmdProbeBed="G29",cmdSaveSettings="M500")
+		return dict(cmdProbeUp="M280 P0 S90",cmdProbeDown="M280 P0 S10",cmdSelfTest="M280 P0 S120",cmdReleaseAlarm="M280 P0 S160",cmdProbeBed="G29",cmdSaveSettings="M500",confirmation=True)
 	
 	##-- Template hooks
 	def get_template_configs(self):

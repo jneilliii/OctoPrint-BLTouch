@@ -37,4 +37,10 @@ Enter the GCODE commands necessary for the BLTouch to work with your firmware.  
 			<input type="text" class="input-block-level" data-bind="value: settings.plugins.BLTouch.cmdSaveSettings"></input>
 		</div>
 	</div>
+	<div class="control-group">
+		<label class="control-label">{{ _('Confirmations') }}</label>
+		<div class="controls">
+				<input type="checkbox" data-bind="checked: settings.plugins.BLTouch.confirmation" title="If enabled Self Test, Release Alarm, Probe Bed, and Save commands above will show confirmation prompt."/> 
+		</div>
+	</div>
 </form>
