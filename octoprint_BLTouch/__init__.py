@@ -4,16 +4,16 @@ from __future__ import absolute_import
 import octoprint.plugin
 
 class BLTouchPlugin(octoprint.plugin.AssetPlugin, octoprint.plugin.TemplatePlugin, octoprint.plugin.SettingsPlugin):
-	##-- AssetPlugin 
+	##-- AssetPlugin
 	def get_assets(self):
 			return dict(
 				js=["js/BLTouch.js"]
 			)
-			
+
 	##-- Settings hooks
 	def get_settings_defaults(self):
 		return dict(cmdProbeUp="M280 P0 S90",cmdProbeDown="M280 P0 S10",cmdSelfTest="M280 P0 S120",cmdReleaseAlarm="M280 P0 S160",cmdProbeBed="G29",cmdSaveSettings="M500",confirmation=True)
-	
+
 	##-- Template hooks
 	def get_template_configs(self):
 		return [dict(type="settings",custom_bindings=False),dict(type="controls",custom_bindings=False)]
@@ -30,6 +30,18 @@ class BLTouchPlugin(octoprint.plugin.AssetPlugin, octoprint.plugin.TemplatePlugi
 				user="jneilliii",
 				repo="OctoPrint-BLTouch",
 				current=self._plugin_version,
+				stable_branch=dict(
+					name="Stable",
+					branch="master",
+					comittish=["master"]
+				),
+				prerelease_branches=[
+					dict(
+						name="Release Candidate",
+						branch="rc",
+						comittish=["rc", "master"]
+					)
+				],
 
 				# update method: pip
 				pip="https://github.com/jneilliii/OctoPrint-Bltouch/archive/{target_version}.zip"
