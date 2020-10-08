@@ -31,7 +31,7 @@ $(function() {
 
 					]}
 				];
-				if(self.settings.settings.plugins.BLTouch.cmdRepeatability() !== ""){
+				if(self.settingsViewModel.settings.plugins.BLTouch.cmdRepeatability() !== ""){
 				    buttons[0].children.push({type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.BLTouch.cmdRepeatability());", name: "Repeat Test", confirm: "You are about to run a repeatability test.", enabled: "!self.isPrinting() && self.loginState.hasPermission(self.access.permissions.CONTROL) && self.isOperational()"});
                 }
 				buttons[0].children.push({type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.BLTouch.cmdSaveSettings());", name: "Save", enabled: "!self.isPrinting() && self.loginState.hasPermission(self.access.permissions.CONTROL) && self.isOperational()"});
@@ -46,7 +46,7 @@ $(function() {
 						{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.BLTouch.cmdSaveSettings());", name: "Save", enabled: "!self.isPrinting() && self.loginState.hasPermission(self.access.permissions.CONTROL) && self.isOperational()"}
 					]}
 				];
-				if(self.settings.settings.plugins.BLTouch.cmdRepeatability() !== ""){
+				if(self.settingsViewModel.settings.plugins.BLTouch.cmdRepeatability() !== ""){
 				    buttons[0].children.push({type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.BLTouch.cmdRepeatability());", name: "Repeat Test", enabled: "!self.isPrinting() && self.loginState.hasPermission(self.access.permissions.CONTROL) && self.isOperational()"});
                 }
 				buttons[0].children.push({type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.BLTouch.cmdSaveSettings());", name: "Save", enabled: "!self.isPrinting() && self.loginState.hasPermission(self.access.permissions.CONTROL) && self.isOperational()"});
