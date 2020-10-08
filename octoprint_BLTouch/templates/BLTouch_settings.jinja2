@@ -31,6 +31,12 @@ Enter the GCODE commands necessary for the BLTouch to work with your firmware.  
 			<textarea rows="3" class="input-block-level" data-bind="value: settings.plugins.BLTouch.cmdProbeBed"></textarea>
 		</div>
 	</div>
+    <div class="control-group">
+		<label class="control-label">{{ _('Repeatibility Test') }}</label>
+		<div class="controls">
+			<input type="text" class="input-block-level" data-bind="value: settings.plugins.BLTouch.cmdRepeatability"></input>
+		</div>
+	</div>
 	<div class="control-group">
 		<label class="control-label">{{ _('Save') }}</label>
 		<div class="controls">
@@ -40,7 +46,7 @@ Enter the GCODE commands necessary for the BLTouch to work with your firmware.  
 	<div class="control-group">
 		<label class="control-label">{{ _('Confirmations') }}</label>
 		<div class="controls">
-				<input type="checkbox" data-bind="checked: settings.plugins.BLTouch.confirmation" title="If enabled Self Test, Release Alarm, Probe Bed, and Save commands above will show confirmation prompt."/> 
+				<input type="checkbox" data-bind="checked: settings.plugins.BLTouch.confirmation" title="If enabled Self Test, Release Alarm, Probe Bed, and Save commands above will show confirmation prompt."/>
 		</div>
 	</div>
 </form>
