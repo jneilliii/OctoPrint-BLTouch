@@ -1,6 +1,6 @@
 # OctoPrint-BLTouch
 
-A simple plugin to add buttons on the control tab to manage BLTouch.
+A simple plugin to add buttons on the control tab to manage BLTouch. This plugin does not do auto bed leveling or utilize your BLTouch in any way to probe your mesh. It is just a utility plugin that adds buttons to the control tab that allows you to send the required GCODE commands to your printer to interact with the BLTouch probe. If you are looking for what those commands should be you should check the [manual](https://www.antclabs.com/manual) for the version of BLTouch that you have.
 
 ![screenshot](screenshot.png)
 
@@ -10,6 +10,10 @@ Install via the bundled [Plugin Manager](https://github.com/foosel/OctoPrint/wik
 or manually using this URL:
 
     https://github.com/jneilliii/OctoPrint-Bltouch/archive/master.zip
+
+## Settings
+
+![settings screenshot](screenshot_settings.png)
 
 ## Get Help
 
