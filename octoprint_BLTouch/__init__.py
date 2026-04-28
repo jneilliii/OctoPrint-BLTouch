@@ -20,6 +20,9 @@ class BLTouchPlugin(octoprint.plugin.AssetPlugin, octoprint.plugin.TemplatePlugi
 	def get_template_configs(self):
 		return [dict(type="settings", custom_bindings=False), dict(type="controls", custom_bindings=False)]
 
+	def is_template_autoescaped(self):
+		return True
+
 	##~~ Softwareupdate hook
 	def get_update_information(self):
 		return dict(

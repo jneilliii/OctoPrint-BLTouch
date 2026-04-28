@@ -1,0 +1,42 @@
+[build-system]
+requires = [
+    "setuptools>=68",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "OctoPrint-BLTouch"
+version = "0.3.5"
+description = "Plugin to add control buttons to the control tab of OctoPrint for the BLTouch."
+authors = [
+    { name = "jneilliii", email = "jneilliii@gmail.com" },
+]
+requires-python = ">=3.7,<4"
+dependencies = []
+dynamic = [
+    "license",
+]
+
+[project.entry-points."octoprint.plugin"]
+BLTouch = "octoprint_BLTouch"
+
+[project.urls]
+Homepage = "https://github.com/jneilliii/OctoPrint-Bltouch"
+
+[project.optional-dependencies]
+develop = [
+    "go-task-bin",
+]
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = [
+    "octoprint_BLTouch",
+    "octoprint_BLTouch.*",
+]
